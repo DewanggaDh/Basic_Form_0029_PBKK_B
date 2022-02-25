@@ -54,6 +54,14 @@
                             <label for="email">Email</label>
                             <input type="text" class="form-control" id="email" name="email" value="{{ old('email') }}">
                         </div>
+                        <div class="form-group">
+                            <label for="number">Masukan angka float favorit anda</label>
+                            <input type="text" class="form-control" id="number" name="number" value="{{ old('number') }}">
+                        </div>
+                        <div class="form-group">
+                            <label for="foto">Foto Profil</label>
+                            <input type="file" class="form-control-file" id="foto" name="foto" value = "{{ old('foto') }}">
+                        </div>
                         <button type="submit" class="btn btn-primary">Masukkan</button>
                     </form>
                 </div>

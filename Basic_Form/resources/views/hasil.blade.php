@@ -15,11 +15,16 @@
             <div class="card mt-5">
                 <div class="card-body">
                     <h3 class="my-4">Hasil Form</h3>
+                    <h4>Anda berhasil memasukan data di form. Ini adalah hasilnya : </h4>
                     <h4>Nama anda adalah {{ $data->nama }}.</h4>
                     <h4>Tempat tinggal anda berada di {{ $data->alamat }}</h4>
                     <h4>Nomor Whatsapp anda adalah {{ $data->wa }}</h4>
                     <h4>ID Line anda adalah {{ $data->line }}</h4>
                     <h4>Email anda adalah {{ $data->email }}</h4>
+                    <h4>Angka float favorit anda adalah {{ $data->number }}</h4>
+                    <h4>Dan ini foto anda : </h4>
+                    <br/>
+                    <img src='{{ $data->foto }}'>
                     <a href="/basicform" class="btn btn-primary">Back</a>
                 </div>
             </div>

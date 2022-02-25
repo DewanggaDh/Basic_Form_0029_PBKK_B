@@ -22,16 +22,20 @@ class BasicForm extends Controller
         $messageError = [
             'required' => ':Wajib diisi',
             'min' => ':attribute harus diisi minimal :min karakter',
-            'max' => 'Jumlah karakter :attribute melebihi :max karakter',
+            'max' => ':attribut melebihi :max kB',
             'numeric' => 'Karakter yang harus dimasukan adalah berupa angka',
+            'mimes' => 'File yang dimasukan harus berupa png dan jpg (dan variannya)',
+            'size' => 'Angka yang dimasukan yada yada ada masalah :size'
         ];
 
         $this->validate($request, [
             'nama' => 'required|max:50',
             'alamat' => 'required|max:100',
-            'wa' => 'required|numeric|min:10',
+            'wa' => 'required|numeric|size:12',
             'line' => 'required',
-            'email' => 'required'
+            'email' => 'required',
+            'foto' => 'required|mimes:jpg,jpeg,png|max:2048',
+            'number' => 'required|numeric|min:2.5|max:99.99',
         ], $messageError);
         return view('hasil', ['data' => $request]);
     }
