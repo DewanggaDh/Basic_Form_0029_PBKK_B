@@ -1,6 +1,6 @@
 <?php
 
-use app\Http\Controllers\BasicForm;
+use App\Http\Controllers\BasicForm; //Note to self, a-nya harus capital
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,4 +18,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/test', [BasicForm::class, 'index']);
+//Route::get('/test', [BasicForm::class, 'index']);
+
+Route::get('/basicform', [BasicForm::class, 'input']);
+//Route::post('/viewform', [BasicForm::class, 'formia'])->name('form_dasar');
+Route::post('/valida', [BasicForm::class, 'valid']);

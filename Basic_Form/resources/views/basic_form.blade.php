@@ -14,11 +14,52 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-6">
-                Pengetesan
+                {{-- Pengetesan --}}
+            <div class="card mt-5">
+                <h3 class="card-title text-center mt-5">
+                    Form Dasar
+                </h3>
+                <br/>
+                @if (count($errors) > 0)
+                <div class = "errorero">
+                    <ul>
+                        @foreach($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+                @endif
+            <br/>
+                <div class="card-body">
+                    {{-- back up "{{route('form_dasar')}}" --}}
+                    <form method="POST" action="/valida" enctype="multipart/form-data">
+                        {{ csrf_field() }}
+                        <div class="form-group">
+                            <label for="nama">Nama</label>
+                            <input type="text" class="form-control" id="nama" name="nama" value="{{ old('nama') }}">
+                        </div>
+                        <div class="form-group">
+                            <label for="alamat">Alamat Rumah</label>
+                            <input type="text" class="form-control" id="alamat" name="alamat" value="{{ old('alamat') }}">
+                        </div>
+                        <div class="form-group">
+                            <label for="wa">Nomor WA</label>
+                            <input type="text" class="form-control" id="wa" name="wa" value="{{ old('wa') }}">
+                        </div>
+                        <div class="form-group">
+                            <label for="line">ID Line</label>
+                            <input type="text" class="form-control" id="line" name="line" value="{{ old('line') }}">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="text" class="form-control" id="email" name="email" value="{{ old('email') }}">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Masukkan</button>
+                    </form>
+                </div>
+            </div>
                 {{-- <div class="card mt-5">
-                    <h3 class="card-title text-center mt-5">
-                        Guest's Form
-                    </h3>
+                    
                     <div class="card-body">
                         <!-- menambahkan query string warna dengan value biru -->
                         <form method="POST" action="{{route('proses-form-guest',['id' => '99','warna' => 'biru'])}}" enctype="multipart/form-data">
