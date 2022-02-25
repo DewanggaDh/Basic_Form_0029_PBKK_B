@@ -9,3 +9,4 @@ Reminder to self
 - Ada 1 form isi nilai double 2.5 - 99.99
       "Berapa persen dari waktu anda digunakan untuk melakukan meditasi di atas gunung dengan secangkir teh tawar dan roti kismis? Minimal 2.5 persen"
 - flash message success
+test
