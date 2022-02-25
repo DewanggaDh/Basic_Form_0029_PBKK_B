@@ -25,13 +25,13 @@ class BasicForm extends Controller
             'max' => ':attribut melebihi :max kB',
             'numeric' => 'Karakter yang harus dimasukan adalah berupa angka',
             'mimes' => 'File yang dimasukan harus berupa png dan jpg (dan variannya)',
-            'size' => 'Angka yang dimasukan yada yada ada masalah :size'
+            'size' => 'Angka yang dimasukan yada yada ada masalah :size',
         ];
 
         $this->validate($request, [
             'nama' => 'required|max:50',
             'alamat' => 'required|max:100',
-            'wa' => 'required|numeric|size:12',
+            'wa' => 'required|numeric',
             'line' => 'required',
             'email' => 'required',
             'foto' => 'required|mimes:jpg,jpeg,png|max:2048',
