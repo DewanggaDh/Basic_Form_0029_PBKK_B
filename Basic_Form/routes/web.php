@@ -18,8 +18,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-//Route::get('/test', [BasicForm::class, 'index']);
-
 Route::get('/basicform', [BasicForm::class, 'input']);
-//Route::post('/viewform', [BasicForm::class, 'formia'])->name('form_dasar');
 Route::post('/valida', [BasicForm::class, 'valid']); 
