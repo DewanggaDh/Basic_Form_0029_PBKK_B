@@ -37,6 +37,10 @@ class BasicForm extends Controller
             'foto' => 'required|mimes:jpg,jpeg,png|max:2048',
             'number' => 'required|numeric|min:2.5|max:99.99',
         ], $messageError);
-        return view('hasil', ['data' => $request]);
+        //Session::flash('message', 'yes berhasil');
+        //session()->flash('message', 'Post successfully updated.');
+        //return view('hasil', ['data' => $request]);
+        //return back()->with('success', 'Berhasil, berhasil hore');
+        return redirect('/basicform')->with('status', 'Updated');
     }
 }
