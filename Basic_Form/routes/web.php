@@ -22,4 +22,4 @@ Route::get('/', function () {
 
 Route::get('/basicform', [BasicForm::class, 'input']);
 //Route::post('/viewform', [BasicForm::class, 'formia'])->name('form_dasar');
-//Route::post('/valida', [BasicForm::class, 'valid']);
+Route::post('/valida', [BasicForm::class, 'valid']); 

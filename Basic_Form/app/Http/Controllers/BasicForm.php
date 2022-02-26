@@ -20,7 +20,7 @@ class BasicForm extends Controller
 
     public function valid(Request $request){
         $messageError = [
-            'required' => ':Wajib diisi',
+            'required' => ':attribute Wajib diisi',
             'min' => ':attribute harus diisi minimal :min karakter',
             'max' => ':attribut melebihi :max kB',
             'numeric' => 'Karakter yang harus dimasukan adalah berupa angka',
@@ -40,7 +40,8 @@ class BasicForm extends Controller
         //Session::flash('message', 'yes berhasil');
         //session()->flash('message', 'Post successfully updated.');
         //return view('hasil', ['data' => $request]);
+        return redirect('basicform')->with('status', 'Upgraded!');
         //return back()->with('success', 'Berhasil, berhasil hore');
-        return redirect('/basicform')->with('status', 'Updated');
+        //return redirect()->flash(['status' => 'Berhasil']);
     }
 }

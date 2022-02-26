@@ -30,17 +30,15 @@
                 </div>
                 @endif
             <br/>
+            @if (session('status'))
+                <div class="alert alert-success">
+                    {{ session('status') }}
+                </div>
+            @endif
                 <div class="card-body">
                     {{-- back up "{{route('form_dasar')}}" --}}
-                    <form method="GET" enctype="multipart/form-data">
+                    <form method="POST" action="/valida" enctype="multipart/form-data">
                         {{ csrf_field() }}
-                        <div>
-                            @if (session('status'))
-                                <div class="alert alert-success">
-                                    <h3>{{ session('status') }} Berhasil</h3>
-                                </div>
-                            @endif
-                        </div>
                         <div class="form-group">
                             <label for="nama">Nama</label>
                             <input type="text" class="form-control" id="nama" name="nama" value="{{ old('nama') }}">
@@ -87,7 +85,6 @@
                                 <label for="city">City</label>
                                 <input type="text" class="form-control" id="city" name="city">
                             </div>
-
                             <!-- Input dalam bentuk array dengan checkbox -->
                             <div class="form-group">
                                 <label for="name">Hobby</label>
@@ -110,7 +107,6 @@
                                     </label>
                                 </div>
                             </div>
-
                             <div class="form-group">
                                 <label for="gambar">Gambar</label>
                                 <input type="file" class="form-control-file" id="gambar" name="gambar">
