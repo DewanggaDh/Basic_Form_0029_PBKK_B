@@ -10,18 +10,17 @@
     <title>Basic Form</title>
 </head>
 
-<body>
+<body class="bg-danger">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-6">
-                {{-- Pengetesan --}}
-            <div class="card mt-5">
-                <h3 class="card-title text-center mt-5">
-                    Form Dasar
+            <div class="card rounded-0 bg-warning">
+                <h3 class="card-title text-center mt-5 bg-dark text-white">
+                    BASIC FORM
                 </h3>
                 <br/>
                 @if (count($errors) > 0)
-                <div class = "errorero">
+                <div class = "mt-3 bg-danger">
                     <ul>
                         @foreach($errors->all() as $error)
                         <li>{{ $error }}</li>
@@ -36,85 +35,40 @@
                 </div>
             @endif
                 <div class="card-body">
-                    {{-- back up "{{route('form_dasar')}}" --}}
                     <form method="POST" action="/valida" enctype="multipart/form-data">
                         {{ csrf_field() }}
                         <div class="form-group">
-                            <label for="nama">Nama</label>
-                            <input type="text" class="form-control" id="nama" name="nama" value="{{ old('nama') }}">
+                            <label for="Nama">Nama</label>
+                            <input type="text" class="form-control" id="Nama" name="Nama" placeholder="Udin Syarifudin" value="{{ old('Nama') }}">
                         </div>
                         <div class="form-group">
-                            <label for="alamat">Alamat Rumah</label>
-                            <input type="text" class="form-control" id="alamat" name="alamat" value="{{ old('alamat') }}">
+                            <label for="Alamat">Alamat Rumah</label>
+                            <input type="text" class="form-control" id="Alamat" name="Alamat" placeholder="Jl. Kearah Timur, 45, Langkah, Disanada, Artakarun" value="{{ old('Alamat') }}">
                         </div>
                         <div class="form-group">
-                            <label for="wa">Nomor WA</label>
-                            <input type="text" class="form-control" id="wa" name="wa" value="{{ old('wa') }}">
+                            <label for="Nomor_WA">Nomor WA</label>
+                            <input type="text" class="form-control" id="Nomor_WA" name="Nomor_WA" placeholder="081208130814" value="{{ old('Nomor_WA') }}">
                         </div>
                         <div class="form-group">
-                            <label for="line">ID Line</label>
-                            <input type="text" class="form-control" id="line" name="line" value="{{ old('line') }}">
+                            <label for="ID_Line">ID Line</label>
+                            <input type="text" class="form-control" id="ID_Line" name="ID_Line" placeholder="sossossos" value="{{ old('ID_Line') }}">
                         </div>
                         <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="text" class="form-control" id="email" name="email" value="{{ old('email') }}">
+                            <label for="Email">Email</label>
+                            <input type="text" class="form-control" id="Email" name="Email" placeholder="cangkulny@gudang.com" value="{{ old('Email') }}">
                         </div>
                         <div class="form-group">
-                            <label for="number">Masukan angka float favorit anda</label>
-                            <input type="text" class="form-control" id="number" name="number" value="{{ old('number') }}">
+                            <label for="Nomor">Masukan angka float favorit anda antara 2.5 sampai 99.99</label>
+                            <input type="text" class="form-control" id="Nomor" name="Nomor" placeholder="95.99" value="{{ old('Nomor') }}">
                         </div>
                         <div class="form-group">
-                            <label for="foto">Foto Profil</label>
-                            <input type="file" class="form-control-file" id="foto" name="foto" value = "{{ old('foto') }}">
+                            <label for="Foto">Foto Profil</label>
+                            <input type="file" class="form-control-file" id="Foto" name="Foto" value = "{{ old('Foto') }}">
                         </div>
                         <button type="submit" class="btn btn-primary">Masukkan</button>
                     </form>
                 </div>
             </div>
-                {{-- <div class="card mt-5">
-                    
-                    <div class="card-body">
-                        <!-- menambahkan query string warna dengan value biru -->
-                        <form method="POST" action="{{route('proses-form-guest',['id' => '99','warna' => 'biru'])}}" enctype="multipart/form-data">
-                            @csrf
-                            <div class="form-group">
-                                <label for="name">Name</label>
-                                <input type="text" class="form-control" id="name" name="name">
-                            </div>
-                            <div class="form-group">
-                                <label for="city">City</label>
-                                <input type="text" class="form-control" id="city" name="city">
-                            </div>
-                            <!-- Input dalam bentuk array dengan checkbox -->
-                            <div class="form-group">
-                                <label for="name">Hobby</label>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="Bermain" id="Bermain" name="hobby[]">
-                                    <label class="form-check-label" for="Bermain">
-                                        Bermain
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="Membaca" id="Membaca" name="hobby[]">
-                                    <label class="form-check-label" for="Membaca">
-                                        Membaca
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="Tidur" id="Tidur" name="hobby[]">
-                                    <label class="form-check-label" for="Tidur">
-                                        Tidur
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="gambar">Gambar</label>
-                                <input type="file" class="form-control-file" id="gambar" name="gambar">
-                            </div>
-                            <button type="submit" class="btn btn-primary">Submit</button>
-                        </form>
-                    </div>
-                </div> --}}
             </div>
         </div>
     </div>
