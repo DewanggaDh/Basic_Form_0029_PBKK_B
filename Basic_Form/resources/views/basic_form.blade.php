@@ -66,6 +66,7 @@
                             <input type="file" class="form-control-file" id="Foto" name="Foto" value = "{{ old('Foto') }}">
                         </div>
                         <button type="submit" class="btn btn-primary">Masukkan</button>
+                        <p><img src= {{ 'Foto' }}></p>
                     </form>
                 </div>
             </div>
