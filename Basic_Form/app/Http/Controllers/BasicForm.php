@@ -23,7 +23,7 @@ class BasicForm extends Controller
         $this->validate($request, [
             'Nama' => 'required|max:50',
             'Alamat' => 'required|max:100',
-            'Nomor_WA' => 'required|numeric|min:10|max:15',
+            'Nomor_WA' => 'required|numeric',
             'ID_Line' => 'required',
             'Email' => 'required',
             'Foto' => 'required|mimes:jpg,jpeg,png|max:2048',
