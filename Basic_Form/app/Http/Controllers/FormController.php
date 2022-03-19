@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Form;
 use App\Http\Requests\StoreFormRequest;
 use App\Http\Requests\UpdateFormRequest;
+use Illuminate\Support\Facades\DB;
 
 class FormController extends Controller
 {
@@ -15,7 +16,11 @@ class FormController extends Controller
      */
     public function index()
     {
-        //
+        DB::table('form')->insert([
+
+        ]);
+        $form = DB::table('form')->get();
+        return view('form.index', ['form' => $form]);
     }
 
     /**
